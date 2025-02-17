@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from './components/NavBar'
+import SettingsPanel from "./components/SettingsPanel";
 import AllEntries from './routes/AllEntries'
 import NewEntry from './routes/NewEntry'
 import EditEntry from './routes/EditEntry'
@@ -15,7 +16,10 @@ export default function App() {
     <section>
   <Router>
     <EntryProvider>
+      <div className="grid grid-cols-3 place-items-center"> 
     <NavBar></NavBar>
+    <SettingsPanel></SettingsPanel>
+    </div>
       <Routes>
         <Route path="/" element={<AllEntries/>}>
         </Route>
