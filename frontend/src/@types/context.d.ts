@@ -12,6 +12,6 @@ export type EntryContextType = {
 };
 
 interface ThemeContextType {
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
   toggleTheme: () => void;
 }
