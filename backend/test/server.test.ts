@@ -1,5 +1,5 @@
-import { server } from "../src/server"
 import Prisma from "../src/db";
+import { server } from "../src/server";
 
 describe("Backend tests", () => {
   let testId: string;
@@ -52,7 +52,7 @@ describe("Backend tests", () => {
     expect(body.description).toBe("Test");
     expect(body.created_at).toBeDefined();
     expect(body.scheduled_at).toBeDefined();
-  })
+  });
 
   it("should update an entry", async () => {
     const response = await server.inject({
@@ -69,7 +69,7 @@ describe("Backend tests", () => {
     expect(response.statusCode).toBe(200);
     const body = JSON.parse(response.body);
     expect(body.msg).toBe("Updated successfully");
-  })
+  });
 
   it("should delete an entry", async () => {
     const response = await server.inject({
@@ -86,5 +86,5 @@ describe("Backend tests", () => {
       url: `/get/${testId}`,
     });
     expect(checkResponse.statusCode).toBe(500);
-  })
+  });
 });
